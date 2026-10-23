@@ -33,4 +33,4 @@
 
 ## Техническая проверка
 
-Результат пересчёта: [verification.json](tables/verification.json). Сборка и визуальная проверка всех 11 страниц, число источников, длина аннотации и проверка запуска модели зафиксированы в [quality_checks.json](quality_checks.json). Инструкция сборки: [code/README.md](../code/README.md). Источники и область проверки литературы: [frontier_fixed_teacher.md](frontier_fixed_teacher.md).
+Результат пересчёта: [verification.json](tables/verification.json). Сборка и визуальная проверка всех 10 страниц, число источников, длина аннотации и проверка запуска модели зафиксированы в [quality_checks.json](quality_checks.json). После редакторской правки отдельно проверены неизменность всех формул и численных таблиц и отсутствие даты на титульной странице. Инструкция сборки: [code/README.md](../code/README.md). Источники и область проверки литературы: [frontier_fixed_teacher.md](frontier_fixed_teacher.md).

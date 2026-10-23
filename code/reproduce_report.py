@@ -81,10 +81,10 @@ def main():
                           completion_gain_mean=mean(p['completion_gain'] for p in rr), completion_gain_sd=stdev(p['completion_gain'] for p in rr),
                           completion_wins=sum(p['completion_gain'] > 0 for p in rr), npmi_delta_mean=mean(p['npmi_delta'] for p in rr)))
     write_csv('small_summary.csv', stats)
-    table('data_statistics.tex', 'Малые коллекции: число тем, диапазоны размера словаря и числа обучающих токенов; покрытие словаря на тестовых документах. Большое различие покрытий ограничивает сопоставимость абсолютной PPL.', 'tab:data',
+    table('data_statistics.tex', 'Число тем, диапазоны размера словаря и числа обучающих токенов на малых коллекциях. Покрытие тестовых токенов усреднено по девяти выборкам; его различия следует учитывать при сравнении PPL.', 'tab:data',
           ['Корпус', '$T$', '$|V|$', 'Токены', 'Покрытие'],
           [[NAMES[r['corpus']], r['n_topics'], f"{r['vocab_min']}--{r['vocab_max']}", f"{r['tokens_min']}--{r['tokens_max']}", f"{r['coverage_mean']:.3f}"] for r in stats])
-    table('small_results.tex', 'Снижение completion PPL по формуле~\\eqref{eq:gain} и изменение внешней NPMI по формуле~\\eqref{eq:coherence}. По девять пар на корпус; SD выборочное. PPL улучшается на каждом корпусе в среднем, знак изменения NPMI зависит от корпуса.', 'tab:small',
+    table('small_results.tex', 'Парное снижение completion PPL~\\eqref{eq:gain} и изменение внешней NPMI~\\eqref{eq:coherence}, по девять пар на корпус. SD --- выборочное стандартное отклонение. Среднее снижение PPL положительно на всех корпусах, изменение NPMI имеет разный знак.', 'tab:small',
           ['Корпус', '$\\bar g$, \\%', 'SD, п.п.', 'Победы', '$\\overline{\\Delta\\mathrm{NPMI}}$'],
           [[NAMES[r['corpus']], f"{r['completion_gain_mean']:.2f}", f"{r['completion_gain_sd']:.2f}", f"{r['completion_wins']}/9", f"{r['npmi_delta_mean']:+.4f}"] for r in stats])
     ablations = []
@@ -94,7 +94,7 @@ def main():
         assert len(pp) == 27
         ablations.append(dict(variant=variant, label=title, n_pairs=len(pp), gain_mean=mean(p['completion_gain'] for p in pp), gain_sd=stdev(p['completion_gain'] for p in pp), wins=sum(p['completion_gain'] > 0 for p in pp)))
     write_csv('ablation_summary.csv', ablations)
-    table('ablation_results.tex', 'Абляции на BBC, TechCrunch и PubMed: снижение completion PPL по формуле~\\eqref{eq:gain} относительно AARTM, 27 общих пар. Большая часть среднего эффекта сохраняется без KL.', 'tab:ablation',
+    table('ablation_results.tex', 'Снижение completion PPL~\\eqref{eq:gain} на BBC, TechCrunch и PubMed, 27 общих пар. Инициализация сохраняет большую часть выигрыша полного метода.', 'tab:ablation',
           ['Вариант', '$\\bar g$, \\%', 'SD, п.п.', 'Победы'], [[r['label'], f"{r['gain_mean']:.2f}", f"{r['gain_sd']:.2f}", f"{r['wins']}/27"] for r in ablations])
     arxiv = read('arxiv_runs.csv')
     arxiv_summary = []
@@ -112,7 +112,7 @@ def main():
                                   ppl_gain_mean=mean(gain(a,b) for a,b in zip(ppl_a,ppl_q)), pmi_ratio=mean(pmi_q)/mean(pmi_a), pmi_wins=sum(q > a for a,q in zip(pmi_a,pmi_q))))
     assert sum(r['pmi_wins'] for r in arxiv_summary) == 20
     write_csv('arxiv_summary.csv', arxiv_summary)
-    table('arxiv_results.tex', 'arXiv: training PPL и training PMI, среднее $\\pm$ выборочное SD по четырём seed. Формулы~\\eqref{eq:trainppl}, \\eqref{eq:coherence}, \\eqref{eq:gain}. PMI растёт при каждом числе тем; это оценка на обучающем корпусе.', 'tab:arxiv',
+    table('arxiv_results.tex', 'Обучающие PPL~\\eqref{eq:trainppl} и PMI~\\eqref{eq:coherence} на arXiv: среднее $\\pm$ выборочное SD по четырём seed; $\\bar g$ определено в~\\eqref{eq:gain}. Учитель повышает среднюю PMI при каждом числе тем.', 'tab:arxiv',
           ['$T$', 'PPL AARTM', 'PPL AARTM+Q', '$\\bar g$, \\%', 'PMI AARTM', 'PMI AARTM+Q'],
           [[r['topics'], f"${r['ppl_aartm_mean']:.2f}\\pm{r['ppl_aartm_sd']:.2f}$", f"${r['ppl_q_mean']:.2f}\\pm{r['ppl_q_sd']:.2f}$", f"{r['ppl_gain_mean']:.2f}", f"${r['pmi_aartm_mean']:.3f}\\pm{r['pmi_aartm_sd']:.3f}$", f"${r['pmi_q_mean']:.3f}\\pm{r['pmi_q_sd']:.3f}$"] for r in arxiv_summary])
     baselines = read('arxiv_baseline_runs.csv')
@@ -133,8 +133,8 @@ def main():
         pmi_rows.append([topics]+pmis)
         time_rows.append([topics]+times)
     write_csv('baseline_summary.csv', bs)
-    table('baseline_pmi.tex', 'Training PMI по формуле~\\eqref{eq:coherence}, среднее $\\pm$ выборочное SD. AARTM+Q выше в проверенных конфигурациях; FASTopic обучен 30 эпох, CombinedTM использует MiniLM.', 'tab:baselines', ['$T$']+models, pmi_rows)
-    table('baseline_runtime.tex', 'Измеренное время, секунды, среднее $\\pm$ выборочное SD. Для AARTM+Q учтены построение $Q$ и обучение, для остальных моделей только обучение; первичное кодирование исключено. Единый сквозной выигрыш по скорости из таблицы не следует.', 'tab:runtime', ['$T$']+models, time_rows)
+    table('baseline_pmi.tex', 'Обучающая PMI~\\eqref{eq:coherence} на arXiv, среднее $\\pm$ выборочное SD по четырём seed. AARTM+Q имеет наибольшую PMI при заданных бюджетах обучения.', 'tab:baselines', ['$T$']+models, pmi_rows)
+    table('baseline_runtime.tex', 'Время в секундах, среднее $\\pm$ выборочное SD. Для AARTM+Q учтены построение $Q$ и обучение, для остальных --- обучение; первичное кодирование исключено. Соотношение времён меняется с числом тем.', 'tab:runtime', ['$T$']+models, time_rows)
     plt.rcParams.update({'font.family':'DejaVu Sans', 'font.size':10, 'axes.spines.top':False, 'axes.spines.right':False})
     fig, axes = plt.subplots(1,2,figsize=(11,3.8), layout='constrained')
     ax = axes[0]
