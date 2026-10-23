@@ -1,0 +1,10 @@
+{
+  "n_pairs": 45,
+  "completion_gain": 7.404727621487931,
+  "completion_wins": 42,
+  "train_gain": 7.90657650155436,
+  "pmi_delta": 2.278927014654295,
+  "npmi_delta": -0.002731177703955338,
+  "npmi_wins": 17,
+  "n_manifests": 45
+}

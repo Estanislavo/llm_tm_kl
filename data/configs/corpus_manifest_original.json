@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-05-24T18:33:43.127370+00:00",
+  "output_dir": "C:\\Users\\JINR\\Desktop\\AARTM\\topic-modelling-attention\\src\\cartm\\EXPS\\data\\corpora",
+  "pubmed_doc_limit": 2000,
+  "counts": {
+    "20ng_4cats": 3641,
+    "agnews": 127600,
+    "bbc": 2225,
+    "pubmed": 1200,
+    "techcrunch": 10265
+  },
+  "corpora": [
+    "20ng_4cats",
+    "agnews",
+    "bbc",
+    "pubmed",
+    "techcrunch"
+  ]
+}

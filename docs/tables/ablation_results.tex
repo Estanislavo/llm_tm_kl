@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Абляции на BBC, TechCrunch и PubMed: снижение completion PPL по формуле~\eqref{eq:gain} относительно AARTM, 27 общих пар. Большая часть среднего эффекта сохраняется без KL.}
+\label{tab:ablation}
+\begin{tabular}{lrrr}
+\toprule
+Вариант & $\bar g$, \% & SD, п.п. & Победы \\
+\midrule
+Инициализация + KL & 5.34 & 2.47 & 27/27 \\
+Только инициализация & 5.27 & 2.63 & 27/27 \\
+Только KL & 1.14 & 1.36 & 22/27 \\
+Переставленный учитель & 0.90 & 1.21 & 20/27 \\
+\bottomrule
+\end{tabular}
+\end{table}

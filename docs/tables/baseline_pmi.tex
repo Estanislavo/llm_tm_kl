@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\small
+\caption{Training PMI по формуле~\eqref{eq:coherence}, среднее $\pm$ выборочное SD. AARTM+Q выше в проверенных конфигурациях; FASTopic обучен 30 эпох, CombinedTM использует MiniLM.}
+\label{tab:baselines}
+\begin{tabular}{lrrr}
+\toprule
+$T$ & AARTM+Q & FASTopic & CombinedTM+MiniLM \\
+\midrule
+50 & $0.679\pm0.010$ & $0.009\pm0.277$ & $-3.887\pm0.701$ \\
+100 & $0.751\pm0.012$ & $-4.948\pm0.791$ & $-5.451\pm0.539$ \\
+200 & $0.761\pm0.016$ & $-6.653\pm0.673$ & $-6.298\pm0.330$ \\
+300 & $0.710\pm0.025$ & $-7.392\pm0.458$ & $-4.077\pm0.560$ \\
+500 & $0.550\pm0.057$ & $-8.062\pm0.442$ & $-1.019\pm0.057$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,2 @@
+data/** -text whitespace=cr-at-eol
+code/aartm_q/*.py -text whitespace=cr-at-eol

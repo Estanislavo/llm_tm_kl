@@ -1,0 +1,343 @@
+{
+  "export_date": "2026-10-23",
+  "local_project_scope": "fixed contextual teacher AARTM+Q",
+  "files": [
+    {
+      "source": "experiments/contextual_teacher/semantic_all_confirmation.csv",
+      "source_sha256": "48d3865d8117e06c64eb3fcda7fef78caf18b95ee4e167ef997814d36a08ccc2",
+      "published": "data/results/small_runs.csv",
+      "sha256": "91fb083f80cedbe0a9615a2ad4fa1ba0663fb29fc1c0a3d2f384ac1374d3612b",
+      "transformation": "retain only fixed-teacher variants and AARTM; preserve all selected values"
+    },
+    {
+      "source": "experiments/arxiv_aartm_q/runs/arxiv_100k_t50_500_multiseed_gpu/runs.csv",
+      "published": "data/results/arxiv_runs.csv",
+      "sha256": "57ffd8120cfac25738b902707221bd2961d40221f8accdde6f81f1ef4c080b33",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/arxiv_baselines/arxiv_baseline_comparison_runs.csv",
+      "published": "data/results/arxiv_baseline_runs.csv",
+      "sha256": "e9230939c7355f71873cf1feafdcf2ee757a7a548e1a8f3247e61c0a05aed22c",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/arxiv_aartm_q/runs/arxiv_100k_t50_500_multiseed_gpu/config.json",
+      "published": "data/configs/arxiv.json",
+      "sha256": "c39b394f3f9be5146a9dc41e13051137216ecbf776d4c46b232869c90d0582cb",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/config.json",
+      "published": "data/configs/small_confirmation_original.json",
+      "sha256": "6c217b0d7f02802d97f89ebd3df292340334774829f60396134b8f19f9acec08",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/config.json",
+      "published": "data/configs/small_transfer_original.json",
+      "sha256": "7cdee4983b6a74cde6fce804836467a07eeb3a77f66139ff01c3801bb2fd764c",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/semantic_environment.json",
+      "published": "data/configs/small_environment.json",
+      "sha256": "34157270a6c9266b9a19c354ada46024fed0e879296a06bb38bd9f673c23d549",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "data/local/manifest.json",
+      "published": "data/configs/corpus_manifest_original.json",
+      "sha256": "5948f99a58f1eee18ca552a36b571ed24613d39525c616d62d7055332d531267",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_10_10_manifest.json",
+      "published": "data/manifests/bbc_10_10_manifest.json",
+      "sha256": "d4d6aaa10cba436c735146d9e7f947e6d0806423b613b484257d78d36c523951",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_10_11_manifest.json",
+      "published": "data/manifests/bbc_10_11_manifest.json",
+      "sha256": "6e65c6a36f144b3601b222e3ce1548199fc69cf2483422dfbb3cbaca146fa8a8",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_10_12_manifest.json",
+      "published": "data/manifests/bbc_10_12_manifest.json",
+      "sha256": "7abc5ab14afae296befc0a2711a7825d59ee8e8338577cc69eb468ee889a0845",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_30_10_manifest.json",
+      "published": "data/manifests/bbc_30_10_manifest.json",
+      "sha256": "0ff6f9359ed0435f02ceb77e76fe4581fab597b4d2de2e2d643c8b2ff47bf213",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_30_11_manifest.json",
+      "published": "data/manifests/bbc_30_11_manifest.json",
+      "sha256": "67ffd655ffba3146c1907b1aa0a73acfeb7a8b3dba6dcb2f732a2f8eedca8dd0",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_30_12_manifest.json",
+      "published": "data/manifests/bbc_30_12_manifest.json",
+      "sha256": "ed5fa267f6b5a53c5e89d74036210369f6a95e641e1238b057bfef50fa47463b",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_50_10_manifest.json",
+      "published": "data/manifests/bbc_50_10_manifest.json",
+      "sha256": "7c84bb18ba7644e51c7a6b3ed61ac619fc14dceb1c8ab0fd6060b75a39e47b38",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_50_11_manifest.json",
+      "published": "data/manifests/bbc_50_11_manifest.json",
+      "sha256": "5aed8bd1a3d175959ac838d07b8fd8f156f72d239ceaad010ea2f1e33a09860b",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/bbc_50_12_manifest.json",
+      "published": "data/manifests/bbc_50_12_manifest.json",
+      "sha256": "48f7ae603fcf8b66b6002154271fe61f74cd2a20a6f6d40c2f48d0fef0c35bed",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_10_10_manifest.json",
+      "published": "data/manifests/pubmed_10_10_manifest.json",
+      "sha256": "02822ecf5e1d17c4001e7ddcc6787572b1f0551f8bd6564477537b3c5e6bc122",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_10_11_manifest.json",
+      "published": "data/manifests/pubmed_10_11_manifest.json",
+      "sha256": "083e2b2ef4946da6be7730ec0c1d5490cfce3226382fc2f25936a791dc930782",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_10_12_manifest.json",
+      "published": "data/manifests/pubmed_10_12_manifest.json",
+      "sha256": "7b5d680d3bf6bbb8e5a5a9d8bfb8210baf5e58b54178ef24e14df22293fa8d0a",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_30_10_manifest.json",
+      "published": "data/manifests/pubmed_30_10_manifest.json",
+      "sha256": "96e25e633e48a2782f299ae95aa85de2eaf9cb769e3330962f3c07b3d5f69d9a",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_30_11_manifest.json",
+      "published": "data/manifests/pubmed_30_11_manifest.json",
+      "sha256": "104826fcc3842eca16f46f7643eb90e140ecc75b94f9bb375280a6a16e766028",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_30_12_manifest.json",
+      "published": "data/manifests/pubmed_30_12_manifest.json",
+      "sha256": "e2a5ce2026a08d864014d902cbe3a39b224c0e96aee239b3b47f2ce25654349d",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_50_10_manifest.json",
+      "published": "data/manifests/pubmed_50_10_manifest.json",
+      "sha256": "79fa685bdd6e10cca9a2f37b34139af967f2f71f88b040b3056d4c37b21f7773",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_50_11_manifest.json",
+      "published": "data/manifests/pubmed_50_11_manifest.json",
+      "sha256": "6678d932d6ef8d539e8ea20a856c071f9092447780eaad5f3aab0695541bb29c",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/pubmed_50_12_manifest.json",
+      "published": "data/manifests/pubmed_50_12_manifest.json",
+      "sha256": "51805a1b45af0f616a55fcc2784ba99f3943cafaca73754750c0b5394db0a985",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_10_10_manifest.json",
+      "published": "data/manifests/techcrunch_10_10_manifest.json",
+      "sha256": "a993100a1e2505090baa2271a6a280f79b9bbe6f4c0717ddd3ffade78ccee2e4",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_10_11_manifest.json",
+      "published": "data/manifests/techcrunch_10_11_manifest.json",
+      "sha256": "8825ec32407166f661b15d3711e7529e829ce245a743373ddd3d1e2d05ddc0a4",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_10_12_manifest.json",
+      "published": "data/manifests/techcrunch_10_12_manifest.json",
+      "sha256": "a166598fee38e4a9b09d989abaffcadac1fa47f79cd8b230e0d9b7b03e938575",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_30_10_manifest.json",
+      "published": "data/manifests/techcrunch_30_10_manifest.json",
+      "sha256": "a918cac152719951a9e56c6f0f299a33e6cb91153e4a9b4dc902ea56599d299b",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_30_11_manifest.json",
+      "published": "data/manifests/techcrunch_30_11_manifest.json",
+      "sha256": "1b4b59fc9e4d19df6a4a4bff7a0780d7cf97e1921274c66b77389cfeee64fbf5",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_30_12_manifest.json",
+      "published": "data/manifests/techcrunch_30_12_manifest.json",
+      "sha256": "2506e345b5aad60dce0dd1d88b7336409b1ade3e9e6646aee02c2c035d23895f",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_50_10_manifest.json",
+      "published": "data/manifests/techcrunch_50_10_manifest.json",
+      "sha256": "ec007fb661867424580651d4c004ff5f5792bde530dade5518f4555dc360d067",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_50_11_manifest.json",
+      "published": "data/manifests/techcrunch_50_11_manifest.json",
+      "sha256": "56ef4daf9daffedb30264a790868ec69f705cd4140b06136d48d2e5c7cda7ef2",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_confirmation_v1/techcrunch_50_12_manifest.json",
+      "published": "data/manifests/techcrunch_50_12_manifest.json",
+      "sha256": "fbc0dff52df32e82dedeb39e674cac8451f187b2d1bcfa9e40078b7f5671650a",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_10_10_manifest.json",
+      "published": "data/manifests/20ng_4cats_10_10_manifest.json",
+      "sha256": "1f059b3bd67d830d5f9caae0a6252e1416f827cbc9e66135b9d9222c4ad21add",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_10_11_manifest.json",
+      "published": "data/manifests/20ng_4cats_10_11_manifest.json",
+      "sha256": "86e34fdfcdc585be3d029b569db3be60aa9d7080d78e70f1095aedbd15cb9df5",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_10_12_manifest.json",
+      "published": "data/manifests/20ng_4cats_10_12_manifest.json",
+      "sha256": "96aaa69a16fa29d15e61b81e094efb3c8949e5699358cbbde630ba3f20fc67e1",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_30_10_manifest.json",
+      "published": "data/manifests/20ng_4cats_30_10_manifest.json",
+      "sha256": "bf0f6bdd38252353d6ac0aeebde70094a61252a70955ad063fdc0b248f4adaea",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_30_11_manifest.json",
+      "published": "data/manifests/20ng_4cats_30_11_manifest.json",
+      "sha256": "4accc7500956ab36673bc2cb2bf1dd0ffb05de43b90d50a65848585500aae55f",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_30_12_manifest.json",
+      "published": "data/manifests/20ng_4cats_30_12_manifest.json",
+      "sha256": "1eb8a63afc4300e1c66908b69e766993b2d503000d17da0427d457f01f46927e",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_50_10_manifest.json",
+      "published": "data/manifests/20ng_4cats_50_10_manifest.json",
+      "sha256": "e3a2ac92aeae56801ed1b325c9883330f16d17c9e8404921c5b7c4ada48aa588",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_50_11_manifest.json",
+      "published": "data/manifests/20ng_4cats_50_11_manifest.json",
+      "sha256": "7220208978d8d08278972af887affb3c059e7b00beb261985a319c594ff7e484",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/20ng_4cats_50_12_manifest.json",
+      "published": "data/manifests/20ng_4cats_50_12_manifest.json",
+      "sha256": "25291fd1bb594eea9a4e40d9f78f7fdb03afcd8118050869dd57f6a2c30478b6",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_10_10_manifest.json",
+      "published": "data/manifests/agnews_10_10_manifest.json",
+      "sha256": "b07e187905339c66159e0ab15542086142cf83bb79c440342f589cfcdb24b635",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_10_11_manifest.json",
+      "published": "data/manifests/agnews_10_11_manifest.json",
+      "sha256": "115dd9fd5abcb9f1a7ea9358ec47b0b181958e4d3dcaafaf7f7bf0ead659a7e9",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_10_12_manifest.json",
+      "published": "data/manifests/agnews_10_12_manifest.json",
+      "sha256": "ab4a5480fab11db9deb4ef7950ccaa4228fa560879664a7dc0250219c27dda9d",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_30_10_manifest.json",
+      "published": "data/manifests/agnews_30_10_manifest.json",
+      "sha256": "6725f36d946556cba929eb61aa101ad1c1a51874c6485b7bdd527edbd3d2e5cd",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_30_11_manifest.json",
+      "published": "data/manifests/agnews_30_11_manifest.json",
+      "sha256": "da2885d280b292620e8538ddeca6820dbc9ce71cbc71ccbedf84a4d4b7148a7b",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_30_12_manifest.json",
+      "published": "data/manifests/agnews_30_12_manifest.json",
+      "sha256": "af33395e175cf8b2beaf3e2a3e9f4967032ec0c41c6437e3f8801177ce922913",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_50_10_manifest.json",
+      "published": "data/manifests/agnews_50_10_manifest.json",
+      "sha256": "f97fc511ba2ad7352047754452e9b4875f55e54e9e4bd9a326ba1a90568e78bd",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_50_11_manifest.json",
+      "published": "data/manifests/agnews_50_11_manifest.json",
+      "sha256": "2b8c81ac7b7768a901c1ce1de23697d88d570054e24545fd4d48c3c8aff3be43",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "experiments/contextual_teacher/runs/semantic_transfer_v1/agnews_50_12_manifest.json",
+      "published": "data/manifests/agnews_50_12_manifest.json",
+      "sha256": "76c9b9ec6e088a3da4fe46aa3e91ba4b82fad1764cd1c2c7cd8e18c9530e0861",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "models/aartm/src/cartm/core.py",
+      "published": "code/aartm_q/core.py",
+      "sha256": "adff392a7c5c93c02334a4a3680799e33c832c331a3c2854758bd9f5067d92f6",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "models/aartm_q/semantic_aartm.py",
+      "published": "code/aartm_q/semantic_aartm.py",
+      "sha256": "029dadaae706ec4043a5c5ed5abdb27bea9013774976d816a2ccd3d0bdecf3e2",
+      "transformation": "verbatim"
+    },
+    {
+      "source": "models/aartm/src/cartm/preprocessing.py",
+      "published": "code/aartm_q/preprocessing.py",
+      "sha256": "9385dc15e9bccda2578b8a8d9b9ea91a0142122f0378cf435337a78909e8b8b0",
+      "transformation": "verbatim"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-23",
+  "pdf_pages": 11,
+  "pdf_sha256": "5bef26283e6d16696be2b152796b69a3066d993cb9ea6c4ca9ffa0ac806455f5",
+  "abstract_characters_with_spaces": 526,
+  "abstract_count_rule": "rendered text: LaTeX percent unescaped; thin space represented by U+202F",
+  "introduction_pages": [
+    2
+  ],
+  "problem_statement_pages": [
+    3
+  ],
+  "experiment_pages": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "bibliography_entries": 19,
+  "all_entries_cited": true,
+  "tables": 6,
+  "figures": 2,
+  "latex_undefined_references": 0,
+  "latex_overfull_boxes": 0,
+  "latex_missing_characters": 0,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "local_markdown_links_valid": true,
+  "report_recalculation": "passed; see tables/verification.json",
+  "model_smoke_run": {
+    "documents": 9,
+    "vocabulary": 72,
+    "topics": 3,
+    "steps": 100,
+    "finite_nonnegative_row_normalized_phi": true
+  },
+  "original_large_experiments_retrained": false
+}

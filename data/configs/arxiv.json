@@ -1,0 +1,53 @@
+{
+  "input_file": "dataset_cache\\arxiv\\arxiv-metadata-oai-snapshot.json",
+  "output_dir": "experiment_outputs\\arxiv_100k_t50_500_multiseed_gpu",
+  "cache_dir": "dataset_cache\\arxiv_prepared",
+  "n_docs": 99049,
+  "topics": [
+    50,
+    100,
+    200,
+    300,
+    500
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45
+  ],
+  "models": [
+    "aartm",
+    "aartm_q"
+  ],
+  "sample_seed": 2026,
+  "device": "cuda",
+  "max_iter": 30,
+  "tol": 0.001,
+  "ctx_len": 5,
+  "gamma": 0.6,
+  "num_attn_passes": 1,
+  "batch_tokens": 50000,
+  "batches_per_update": 10,
+  "lr": 0.1,
+  "min_count": 20,
+  "max_vocab_size": 50000,
+  "min_doc_tokens": 20,
+  "max_doc_tokens": 512,
+  "min_token_length": 2,
+  "coherence_top_k": 10,
+  "q_init_weight": 0.95,
+  "q_kl_weight": 0.1,
+  "teacher_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "teacher_temperature": 0.05,
+  "teacher_chunk_words": 100,
+  "teacher_max_chunks": 100000,
+  "teacher_encode_batch_size": 256,
+  "teacher_kmeans_batch_size": 4096,
+  "n_tokens": 9827939,
+  "vocab_size": 12662,
+  "teacher_chunks": 100000,
+  "source": "C:\\Users\\JINR\\Desktop\\AARTM\\topic-modelling-attention\\dataset_cache\\arxiv\\arxiv-metadata-oai-snapshot.json",
+  "cache_key": "d6a5a15054eec452",
+  "resolved_device": "cuda"
+}

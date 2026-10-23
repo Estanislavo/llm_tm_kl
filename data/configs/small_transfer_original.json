@@ -1,0 +1,41 @@
+{
+  "protocol": "fulltext-common-vocabulary-v1",
+  "corpora": [
+    "20ng_4cats",
+    "agnews"
+  ],
+  "sizes": [
+    10,
+    30,
+    50
+  ],
+  "seeds": [
+    10,
+    11,
+    12
+  ],
+  "stage": "screen",
+  "steps": 100,
+  "variants": [
+    {
+      "name": "aartm"
+    },
+    {
+      "name": "legacy_hdbscan",
+      "teacher": "hdbscan",
+      "temperature": 1,
+      "top": 0.3,
+      "kl": 0.1
+    },
+    {
+      "name": "contextual_kl",
+      "teacher": "chunks",
+      "temperature": 0.05,
+      "init": 0.95,
+      "kl": 0.1
+    }
+  ],
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "source_hash": "47f61c03fed7e2b55947de83099852cf694df3cdd1928d3b7710323fc2c32c6d",
+  "evaluation": "test"
+}
