@@ -84,9 +84,9 @@ def main():
     table('data_statistics.tex', 'Число тем, диапазоны размера словаря и числа обучающих токенов на малых коллекциях. Покрытие тестовых токенов усреднено по девяти выборкам; его различия следует учитывать при сравнении PPL.', 'tab:data',
           ['Корпус', '$T$', '$|V|$', 'Токены', 'Покрытие'],
           [[NAMES[r['corpus']], r['n_topics'], f"{r['vocab_min']}--{r['vocab_max']}", f"{r['tokens_min']}--{r['tokens_max']}", f"{r['coverage_mean']:.3f}"] for r in stats])
-    table('small_results.tex', 'Парное снижение completion PPL~\\eqref{eq:gain} и изменение внешней NPMI~\\eqref{eq:coherence}, по девять пар на корпус. SD --- выборочное стандартное отклонение. Среднее снижение PPL положительно на всех корпусах, изменение NPMI имеет разный знак.', 'tab:small',
-          ['Корпус', '$\\bar g$, \\%', 'SD, п.п.', 'Победы', '$\\overline{\\Delta\\mathrm{NPMI}}$'],
-          [[NAMES[r['corpus']], f"{r['completion_gain_mean']:.2f}", f"{r['completion_gain_sd']:.2f}", f"{r['completion_wins']}/9", f"{r['npmi_delta_mean']:+.4f}"] for r in stats])
+    table('small_results.tex', 'Среднее снижение completion PPL и изменение внешней NPMI для AARTM+Q относительно AARTM, по девять пар на корпус.', 'tab:small',
+          ['Корпус', 'Снижение PPL, \\%', '$\\Delta$NPMI'],
+          [[NAMES[r['corpus']], f"{r['completion_gain_mean']:.2f}", f"{r['npmi_delta_mean']:+.4f}"] for r in stats])
     ablations = []
     variants = [('contextual_kl', 'Инициализация + KL'), ('contextual_init_only', 'Только инициализация'), ('contextual_no_init', 'Только KL'), ('contextual_shuffled', 'Переставленный учитель')]
     for variant, title in variants:
@@ -112,9 +112,6 @@ def main():
                                   ppl_gain_mean=mean(gain(a,b) for a,b in zip(ppl_a,ppl_q)), pmi_ratio=mean(pmi_q)/mean(pmi_a), pmi_wins=sum(q > a for a,q in zip(pmi_a,pmi_q))))
     assert sum(r['pmi_wins'] for r in arxiv_summary) == 20
     write_csv('arxiv_summary.csv', arxiv_summary)
-    table('arxiv_results.tex', 'Обучающие PPL~\\eqref{eq:trainppl} и PMI~\\eqref{eq:coherence} на arXiv: среднее $\\pm$ выборочное SD по четырём seed; $\\bar g$ определено в~\\eqref{eq:gain}. Учитель повышает среднюю PMI при каждом числе тем.', 'tab:arxiv',
-          ['$T$', 'PPL AARTM', 'PPL AARTM+Q', '$\\bar g$, \\%', 'PMI AARTM', 'PMI AARTM+Q'],
-          [[r['topics'], f"${r['ppl_aartm_mean']:.2f}\\pm{r['ppl_aartm_sd']:.2f}$", f"${r['ppl_q_mean']:.2f}\\pm{r['ppl_q_sd']:.2f}$", f"{r['ppl_gain_mean']:.2f}", f"${r['pmi_aartm_mean']:.3f}\\pm{r['pmi_aartm_sd']:.3f}$", f"${r['pmi_q_mean']:.3f}\\pm{r['pmi_q_sd']:.3f}$"] for r in arxiv_summary])
     baselines = read('arxiv_baseline_runs.csv')
     assert len(baselines) == 80
     models = ['AARTM+Q', 'FASTopic', 'CombinedTM+MiniLM']
@@ -133,6 +130,9 @@ def main():
         pmi_rows.append([topics]+pmis)
         time_rows.append([topics]+times)
     write_csv('baseline_summary.csv', bs)
+    comparison_models = ['AARTM', 'AARTM+Q', 'FASTopic', 'CombinedTM+MiniLM']
+    comparison = [[topics] + [ms([float(r['train_pmi_top10']) for r in baselines if int(r['topics']) == topics and r['model'] == model]) for model in comparison_models] for topics in [50, 100, 200, 300, 500]]
+    table('arxiv_results.tex', 'Обучающая PMI на arXiv: среднее $\\pm$ выборочное стандартное отклонение по четырём seed.', 'tab:arxiv', ['$T$'] + comparison_models, comparison)
     table('baseline_pmi.tex', 'Обучающая PMI~\\eqref{eq:coherence} на arXiv, среднее $\\pm$ выборочное SD по четырём seed. AARTM+Q имеет наибольшую PMI при заданных бюджетах обучения.', 'tab:baselines', ['$T$']+models, pmi_rows)
     table('baseline_runtime.tex', 'Время в секундах, среднее $\\pm$ выборочное SD. Для AARTM+Q учтены построение $Q$ и обучение, для остальных --- обучение; первичное кодирование исключено. Соотношение времён меняется с числом тем.', 'tab:runtime', ['$T$']+models, time_rows)
     plt.rcParams.update({'font.family':'DejaVu Sans', 'font.size':10, 'axes.spines.top':False, 'axes.spines.right':False})

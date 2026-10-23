@@ -1,17 +1,17 @@
 \begin{table}[H]
 \centering
 \small
-\caption{Парное снижение completion PPL~\eqref{eq:gain} и изменение внешней NPMI~\eqref{eq:coherence}, по девять пар на корпус. SD --- выборочное стандартное отклонение. Среднее снижение PPL положительно на всех корпусах, изменение NPMI имеет разный знак.}
+\caption{Среднее снижение completion PPL и изменение внешней NPMI для AARTM+Q относительно AARTM, по девять пар на корпус.}
 \label{tab:small}
-\begin{tabular}{lrrrr}
+\begin{tabular}{lrr}
 \toprule
-Корпус & $\bar g$, \% & SD, п.п. & Победы & $\overline{\Delta\mathrm{NPMI}}$ \\
+Корпус & Снижение PPL, \% & $\Delta$NPMI \\
 \midrule
-BBC & 6.53 & 2.47 & 9/9 & +0.0322 \\
-20NG (4 кат.) & 9.15 & 8.16 & 8/9 & +0.0508 \\
-AG News & 11.87 & 17.27 & 7/9 & -0.0342 \\
-TechCrunch & 6.41 & 1.84 & 9/9 & -0.0657 \\
-PubMed & 3.06 & 1.28 & 9/9 & +0.0032 \\
+BBC & 6.53 & +0.0322 \\
+20NG (4 кат.) & 9.15 & +0.0508 \\
+AG News & 11.87 & -0.0342 \\
+TechCrunch & 6.41 & -0.0657 \\
+PubMed & 3.06 & +0.0032 \\
 \bottomrule
 \end{tabular}
 \end{table}
