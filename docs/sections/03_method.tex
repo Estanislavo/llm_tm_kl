@@ -1,0 +1,23 @@
+\section{Метод}
+В AARTM распределение тем для позиции $i$ уточняется по соседним словам:
+\[
+ \theta_{it}=\sum_{j\in\mathcal C(i)}a_{ij}\Phi_{w_jt},\qquad
+ r_{it}=\frac{\Phi_{w_it}\theta_{it}/\pi_t}
+ {\sum_{s=1}^{T}\Phi_{w_is}\theta_{is}/\pi_s}.
+\]
+Здесь $\mathcal C(i)$ --- окно внутри документа, $a_{ij}$ --- фиксированные нормированные веса внимания, $\pi_t$ --- текущая оценка частоты темы.
+
+MiniLM~\cite{minilmcard} кодирует неперекрывающиеся фрагменты $c$ обучающих документов длиной до 100 слов. Нормированные векторы $e_c$ кластеризуются методом KMeans (на arXiv --- MiniBatchKMeans). По нормированным центрам $\mu_t$ вычисляется распределение тем фрагмента, затем --- распределение тем для слова:
+\[
+ q(t\mid c)=\frac{\exp(e_c^\top\mu_t/\tau)}
+ {\sum_{s=1}^{T}\exp(e_c^\top\mu_s/\tau)},\qquad
+ Q_{wt}=\frac{\sum_c n_{cw}q(t\mid c)+\varepsilon}
+ {\sum_{s=1}^{T}\bigl(\sum_c n_{cw}q(s\mid c)+\varepsilon\bigr)}.
+\]
+Здесь $\tau=0.05$, $n_{cw}$ --- число вхождений слова $w$ во фрагмент $c$, $\varepsilon>0$ --- сглаживание.
+
+Матрица $Q$ используется для инициализации:
+\[
+ \Phi^{(0)}=\operatorname{norm}_{t}\bigl(0.05\Phi^{\rm rand}+0.95Q+\varepsilon\bigr),
+\]
+где $\operatorname{norm}_t$ нормирует строки по темам, а $\Phi^{\rm rand}$ --- случайное начальное приближение. При обновлении AARTM добавляется поправка по градиенту KL-штрафа из~\eqref{eq:objective} с $\lambda=0.1$. Матрица $Q$ остаётся фиксированной.

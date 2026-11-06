@@ -1,6 +1,6 @@
 {
   "pdf_pages": 3,
-  "pdf_sha256": "1688c3eb31a11780c4d88d6996429d4b6f70840df96ec6bb5d21de2a2c6057ab",
+  "pdf_sha256": "d67df2c4a40364bb5ce413b14663b1f489cf49d900b2fca552430c0564b2a166",
   "abstract_characters_with_spaces": 526,
   "introduction_words": 83,
   "problem_statement_words": 84,
@@ -24,5 +24,9 @@
   "source_results_unchanged": true,
   "latex_errors": 0,
   "all_pages_visually_checked": true,
-  "report_recalculation": "passed; see tables/verification.json"
+  "report_recalculation": "passed; see tables/verification.json",
+  "method_pages": [
+    1,
+    2
+  ]
 }

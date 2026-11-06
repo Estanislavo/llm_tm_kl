@@ -1,5 +1,5 @@
 \section{Эксперименты}
-Сравниваются AARTM и AARTM+Q с фиксированным учителем на основе MiniLM~\cite{minilmcard}. Документы разбиваются на фрагменты до 100 слов. Их векторы кластеризуются, мягкие назначения фрагментов темам усредняются по вхождениям слов и образуют $Q$. Начальная матрица содержит 95\% распределения учителя и 5\% случайного распределения; коэффициент KL равен 0.1.
+Сравниваются базовая AARTM и AARTM+Q с фиксированным учителем.
 
 На \href{https://huggingface.co/datasets/SetFit/bbc-news}{BBC}, \href{https://huggingface.co/datasets/abhilash88/techcrunch-articles}{TechCrunch}, \href{https://huggingface.co/datasets/common-pile/pubmed}{PubMed}, \href{https://huggingface.co/datasets/fancyzhx/ag_news}{AG News} и четырёх категориях \href{https://huggingface.co/datasets/SetFit/20_newsgroups}{20 Newsgroups} используются выборки по 10, 30 и 50 документов и три seed. Для BBC задаются 5 тем, для AG News и 20NG --- 4, для TechCrunch и PubMed --- 10. Обучение длится 100 итераций; окно внимания включает по пять соседних токенов с каждой стороны.
 
