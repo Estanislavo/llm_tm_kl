@@ -1,6 +1,6 @@
 {
   "pdf_pages": 3,
-  "pdf_sha256": "d67df2c4a40364bb5ce413b14663b1f489cf49d900b2fca552430c0564b2a166",
+  "pdf_sha256": "7aa13ae03d9c9c62e1219b6d972440d33db91f2451a381b4c2c4558868c66c16",
   "abstract_characters_with_spaces": 526,
   "introduction_words": 83,
   "problem_statement_words": 84,
@@ -28,5 +28,7 @@
   "method_pages": [
     1,
     2
-  ]
+  ],
+  "font_size_pt": 10,
+  "demo_comparison": "two identical runs; seed 10; six training and three evaluation documents"
 }

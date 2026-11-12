@@ -15,6 +15,8 @@ python -m pip install -r code/requirements-report.txt
 python code/reproduce_report.py
 ```
 
+Небольшое сравнение AARTM и AARTM+Q с обучением и оценкой скрытых слов: `python code/run_demo.py`. Данные уже включены в репозиторий; зависимости и описание — в [code/README.md](code/README.md).
+
 Собрать PDF в PowerShell: `./docs/build.ps1`. Подробности запуска — в [code/README.md](code/README.md), источники корпусов — в [data/README.md](data/README.md).
 
 Презентация экспериментов: [PDF](exp.pdf), [PowerPoint](exp.pptx).
