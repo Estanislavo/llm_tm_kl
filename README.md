@@ -19,4 +19,6 @@ python code/reproduce_report.py
 
 Собрать PDF в PowerShell: `./docs/build.ps1`. Подробности запуска — в [code/README.md](code/README.md), источники корпусов — в [data/README.md](data/README.md).
 
-Презентация экспериментов: [PDF](exp.pdf), [PowerPoint](exp.pptx).
+Презентация статьи на три минуты: [PDF](slides/talk_3min.pdf), [PowerPoint](slides/talk_3min.pptx).
+
+Однослайдовая презентация экспериментов: [PDF](exp.pdf), [PowerPoint](exp.pptx).
